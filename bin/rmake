@@ -1,0 +1,9 @@
+#!/bin/sh
+exec make "SPECIAL=" \
+	"OPT=-O2" \
+	"MACH=-Dlinux -D_FILE_OFFSET_BITS=64 -L/usr/X11R6/lib -I/usr/include/X11 -DNOSTEREO" \
+	ARCH=IBMPC "COMPAT=erf.o" \
+	INSTDIR=/software/users/FMTGA/ray/bin \
+	LIBDIR=/software/users/FMTGA/ray/lib \
+	ESUFFIX= \
+	CC=gcc "$@" -f Rmakefile
